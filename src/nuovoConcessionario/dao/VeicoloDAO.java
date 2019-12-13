@@ -66,5 +66,9 @@ public class VeicoloDAO implements Dao<Veicolo> {
 		return 0;
 	}
 
+	private Veicolo creaVeicolo(ResultSet rs) {
+		return null;
+		
+	}
 	
 }
