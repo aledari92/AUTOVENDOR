@@ -11,10 +11,9 @@ public abstract class Veicolo implements Serializable {
 	private String alimentazione;
 	private String colore;
 	private Double prezzo;
-	private Integer numeroPorte;
 	
-	public Veicolo(String targa, String produttore, String modello, String alimentazione, String colore,
-			Double prezzo) {
+	public Veicolo(String targa, String produttore, 
+				Double prezzo, String modello, String alimentazione, String colore) {
 		this.targa = targa;
 		this.produttore = produttore;
 		this.modello = modello;
@@ -25,7 +24,7 @@ public abstract class Veicolo implements Serializable {
 	
 	public Veicolo(Long id, String targa, String produttore, String modello, String alimentazione, String colore,
 			Double prezzo) {
-		this(targa,produttore,modello,alimentazione,colore,prezzo);
+		this( targa, produttore,prezzo, modello, alimentazione, colore);
 		this.id = id;
 	}
 
@@ -89,13 +88,12 @@ public abstract class Veicolo implements Serializable {
 
 	public abstract String getTipo();
 
-	public Integer getAltezzaSedile() {
-		return null;
+	@Override
+	public String toString() {
+		return "Veicolo [id=" + id + ", targa=" + targa + ", produttore=" + produttore + ", modello=" + modello
+				+ ", alimentazione=" + alimentazione + ", colore=" + colore + ", prezzo=" + prezzo + "]";
 	}
-	
-	public Integer getNumeroPorte() {
-		return null;
-	}
+
 
 	
 

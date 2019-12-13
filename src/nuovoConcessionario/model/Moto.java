@@ -2,12 +2,18 @@ package nuovoConcessionario.model;
 
 public class Moto extends Veicolo {
 
+	@Override
+	public String toString() {
+		return "Moto "+super.toString()+ " [altezzaSedile=" + altezzaSedile + "]";
+	}
+
 	private Integer altezzaSedile;
 	
 	public Moto(String targa, String produttore, String modello, 
 			String alimentazione, String colore, Double prezzo,
-			String tipo, String altezzaSedile) {
-		super(targa, produttore, modello, alimentazione, colore, prezzo);
+			String tipo, Integer altezzaSedile) {
+		super(targa, produttore,prezzo, modello, alimentazione, colore);
+		this.altezzaSedile = altezzaSedile;
 		
 	}
 
@@ -23,7 +29,6 @@ public class Moto extends Veicolo {
 		return "M";
 	}
 
-	@Override
 	public Integer getAltezzaSedile() {
 		return altezzaSedile;
 	}
